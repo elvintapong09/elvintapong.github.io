@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elvin Tapong | Security Engineer</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #1e253a;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+      --accent: #38bdf8;
+      --radius-lg: 1rem;
+      --radius-sm: .5rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      padding: 2rem 1rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      main {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+
+    /* Left column / sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .card {
+      background-color: var(--panel);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.25rem;
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      border: 1px solid rgba(148,163,184,.15);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin: 0 0 .75rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+    }
+
+    h1 span.title-role {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .contact-row {
+      display: grid;
+      gap: .4rem;
+      font-size: .9rem;
+      color: var(--text-dim);
+      word-break: break-word;
+    }
+
+    .contact-row a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .section-heading {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: .08em;
+      margin: 0 0 .75rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .chip {
+      background: rgba(56,189,248,.08);
+      color: var(--text-main);
+      border: 1px solid rgba(56,189,248,.4);
+      font-size: .7rem;
+      font-weight: 500;
+      padding: .4rem .6rem;
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* Right column / content */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .panel {
+      background-color: var(--panel);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.25rem;
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      border: 1px solid rgba(148,163,184,.15);
+    }
+
+    .experience-item + .experience-item {
+      border-top: 1px solid rgba(148,163,184,.15);
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .5rem;
+    }
+
+    .exp-header-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .company {
+      font-size: .9rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .date-loc {
+      font-size: .8rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      text-align: right;
+    }
+
+    ul {
+      margin: .75rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--text-dim);
+      font-size: .9rem;
+    }
+
+    li {
+      margin-bottom: .5rem;
+    }
+
+    .proj-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .proj-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .proj-card {
+      background-color: rgba(15,23,42,.4);
+      border: 1px solid rgba(148,163,184,.2);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+
+    .proj-title {
+      color: var(--text-main);
+      font-size: .9rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 .4rem;
+    }
+
+    .proj-desc {
+      color: var(--text-dim);
+      font-size: .8rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: .7rem;
+      color: var(--text-dim);
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <section class="card">
+        <h1>
+          <span>Elvin Tapong</span>
+          <span class="title-role">Security Analyst / Security Engineer</span>
+        </h1>
+        <div class="contact-row">
+          <div>Houston, TX • Open to Remote</div>
+          <div><a href="mailto:elvintapong09@gmail.com">elvintapong09@gmail.com</a></div>
+          <div><a href="tel:+17137489496">713-748-9496</a></div>
+          <div><a href="https://www.linkedin.com" target="_blank">linkedin.com/in/yourprofile</a></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">About</div>
+        <div style="color: var(--text-dim); font-size: .9rem;">
+          Security Analyst with 6+ years of experience in SOC operations, detection engineering,
+          incident response, and cloud security. I improve visibility, cut response time,
+          and build practical security processes that teams can actually use.
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">Core Skills</div>
+        <div class="skills-list">
+          <span class="chip">SIEM: Splunk / Sentinel</span>
+          <span class="chip">EDR / EPP</span>
+          <span class="chip">Detection Engineering</span>
+          <span class="chip">Incident Response</span>
+          <span class="chip">Forensics</span>
+          <span class="chip">Threat Hunting</span>
+          <span class="chip">SOAR Automation</span>
+          <span class="chip">Cloud Security (AWS / Azure)</span>
+          <span class="chip">Python / PowerShell</span>
+          <span class="chip">MITRE ATT&amp;CK</span>
+          <span class="chip">NIST</span>
+          <span class="chip">Vulnerability Mgmt</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">Certifications</div>
+        <div style="color: var(--text-dim); font-size: .9rem; display: grid; gap: .4rem;">
+          <div>CompTIA Security+</div>
+          <div>CompTIA Network+</div>
+          <div>CompTIA A+</div>
+          <!-- Add others here if you want like GSEC, CEH, etc. -->
+        </div>
+      </section>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <section class="content">
+
+      <section class="panel">
+        <h2 class="section-heading">Experience</h2>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <div class="exp-header-left">
+              <div class="role">Security Analyst | Splunk, SIEM, EDR, Incident Response, Cybersecurity</div>
+              <div class="company">Fulcrum Technology Solutions</div>
+            </div>
+            <div class="date-loc">2023 – Present • Houston, TX</div>
+          </div>
+          <ul>
+            <li>Improved detection accuracy by 35% by tuning SIEM correlation rules and EDR logic across 500+ endpoints and multi-cloud (AWS, Azure, O365).</li>
+            <li>Automated alert triage with Python and SOAR playbooks, cutting mean time to respond by 28%.</li>
+            <li>Ran 20–30 forensic and malware investigations per month and contained 100% of confirmed threats within SLA.</li>
+            <li>Expanded log coverage by 20% by onboarding new data sources into Splunk and Sentinel for better visibility.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <div class="exp-header-left">
+              <div class="role">Security Analyst | SIEM, EDR, Network Analysis, Incident Response</div>
+              <div class="company">Perch Security</div>
+            </div>
+            <div class="date-loc">2020 – 2023 • Remote</div>
+          </div>
+          <ul>
+            <li>Monitored network traffic and packets with Kibana / Suricata / Zeek across 1,000+ endpoints to spot and escalate suspicious activity.</li>
+            <li>Kept a 95% on-time response rate for high-priority alerts by triaging and escalating real threats fast.</li>
+            <li>Cut false positives by ~30% by improving correlation rules and playbooks.</li>
+            <li>Delivered clear incident reports and status updates that drove a 20% jump in client satisfaction.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <div class="exp-header-left">
+              <div class="role">Systems Support Engineer | LMS Security and Reliability</div>
+              <div class="company">Instructure</div>
+            </div>
+            <div class="date-loc">2022 – 2023 • Remote</div>
+          </div>
+          <ul>
+            <li>Supported and secured the Canvas LMS for 10,000+ users and helped the platform stay at 98%+ uptime.</li>
+            <li>Resolved Windows, Mac, and access issues 25% faster by tightening troubleshooting workflows and knowledge sharing.</li>
+            <li>Worked with engineering to remove repeat issues and dropped recurring tickets by ~20%.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <div class="exp-header-left">
+              <div class="role">L2 Technical Support / Floor Manager | POS Systems and Endpoint Security</div>
+              <div class="company">Hungerrush</div>
+            </div>
+            <div class="date-loc">2018 – 2020 • Houston, TX</div>
+          </div>
+          <ul>
+            <li>Led an L1 support team and handled high-severity escalations for 100+ retail clients using the Retention POS platform.</li>
+            <li>Cut ticket queue time by 25% by tightening escalation and workload routing.</li>
+            <li>Kept POS systems at ~98% uptime and supported PCI compliance across customer environments.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="section-heading">Projects</h2>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-title">AI-Powered Cert Tracker App</div>
+            <p class="proj-desc">
+              Built an internal tool using Claude AI to track analyst certifications, send renewal alerts, and surface skills gaps.
+              Raised compliance from 72% to 96% and saved ~40+ hours of manual tracking per quarter.
+            </p>
+          </div>
+          <div class="proj-card">
+            <div class="proj-title">SOC Playbook and Detection Tuning</div>
+            <p class="proj-desc">
+              Helped standardize IR playbooks and build new SIEM and EDR logic mapped to MITRE ATT&CK.
+              Reduced noise, improved signal, and gave leadership clearer visibility into active threats.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2025 Elvin Tapong • Open to full-time Security Engineer / Detection & Response roles • <a href="mailto:elvintapong09@gmail.com">Contact me</a></div>
+  </footer>
+</body>
+</html>
